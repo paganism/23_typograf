@@ -1,5 +1,5 @@
 from flask import Flask, render_template, request
-from typograf import apply_rule_to_test
+from typograf import apply_rule_to_text
 app = Flask(__name__)
 
 
@@ -9,7 +9,7 @@ def form():
         input_text = request.form.get('text')
         if not input_text:
             print('Ничего не введено')
-        output_text = apply_rule_to_test(input_text)
+        output_text = apply_rule_to_text(input_text)
         return render_template(
             'form.html',
             raw_text=input_text,
