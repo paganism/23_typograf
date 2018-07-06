@@ -19,6 +19,5 @@ substitute_rules = [
 
 def apply_rule_to_test(pattern):
     for rule, subst in substitute_rules:
-        output_text = re.sub(rule, subst, pattern)
-        pattern = output_text
-    return output_text
+        pattern = re.sub(rule, subst, pattern)
+    return pattern
