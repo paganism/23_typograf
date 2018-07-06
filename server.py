@@ -2,7 +2,8 @@ from flask import Flask, render_template, request
 from typograf import apply_rule_to_test
 app = Flask(__name__)
 
-@app.route('/', methods=['POST','GET'])
+
+@app.route('/', methods=['POST', 'GET'])
 def form():
     if request.method == 'POST':
         input_text = request.form.get('text')
