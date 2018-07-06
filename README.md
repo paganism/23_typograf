@@ -1,6 +1,6 @@
 # Typograf Service
 
-Simple Typograf Service which can prepare the text for web publication.
+Simple Typograf Service can prepare the text for web publication.
 
 It supports the following rules:
 * replace quotes ' or " to « »;
