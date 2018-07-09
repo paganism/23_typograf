@@ -1,5 +1,10 @@
 from flask import Flask, render_template, request
 from typograf import apply_rule_to_text
+import logging
+
+
+logging.basicConfig(level=logging.INFO)
+
 app = Flask(__name__)
 
 
@@ -8,7 +13,7 @@ def form():
     if request.method == 'POST':
         input_text = request.form.get('text')
         if not input_text:
-            print('Ничего не введено')
+            app.logger.info('Ничего не введено')
         output_text = apply_rule_to_text(input_text)
         return render_template(
             'form.html',
@@ -16,6 +21,7 @@ def form():
             processed_text=output_text)
     else:
         return render_template('form.html')
+
 
 if __name__ == "__main__":
     app.run()
