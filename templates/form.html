@@ -29,6 +29,7 @@
     <div class="container">
       <form method="POST">
         <div class="form-group">
+          <input type="hidden" name="csrf_token" value="{{ csrf_token() }}"/>
           <textarea name="text" class="form-control" rows="10" placeholder="Введите текст" autofocus>{{ raw_text }}</textarea>
         </div>
 

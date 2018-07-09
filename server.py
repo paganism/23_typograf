@@ -1,11 +1,13 @@
 from flask import Flask, render_template, request
+from flask_wtf.csrf import CSRFProtect
 from typograf import apply_rule_to_text
 import logging
 
 
 logging.basicConfig(level=logging.INFO)
-
 app = Flask(__name__)
+csrf = CSRFProtect(app)
+app.config['SECRET_KEY'] = 'lemon wedges'
 
 
 @app.route('/', methods=['POST', 'GET'])
