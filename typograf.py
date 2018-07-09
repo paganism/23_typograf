@@ -17,7 +17,7 @@ substitute_rules = [
     ]
 
 
-def apply_rule_to_test(pattern):
+def apply_rule_to_text(pattern):
     for rule, subst in substitute_rules:
         pattern = re.sub(rule, subst, pattern)
     return pattern
